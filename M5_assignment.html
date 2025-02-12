@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Simple Sentence Generator</h2>
+        <input type="button" id="generateBtn" value="Generate Sentence">
+        <p id="output"></p>
+        <script>
+            /* Create an array */
+            let words = ["I", "love", "to", "code", "in", "Python", "but", "not", "so", "much", "in", "Javascript", "."]
+            /* Create function that concatenates array into 
+            a sentence (adding spaces between words), and 
+            outputs the result to '<p id="output"><p>' innerHTML */
+            const output = document.getElementById("output")
+            const generateBtn = document.getElementById("generateBtn")
+            function make_sentence(words) {
+                let sentence = [...words].join(" ")
+
+                let sentence2 = ""
+                for (word in words){
+                    sentence2 += `${words[word]} `
+                }
+                output.textContent = `${sentence} Worse version: ${sentence2}`
+            }
+            /* Add an event listener to generateBtn.
+            When clicked, the generateBtn should execute 
+            the generateSentence function, displaying the sentence. */
+            generateBtn.addEventListener("click", function(){
+                make_sentence(words)
+            })
+        </script>
+    </body>
+</html>
